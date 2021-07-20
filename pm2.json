@@ -1,0 +1,37 @@
+{
+    "apps": {
+        "name": "goodo-intermediate",
+        "script": "./build/app.js",
+        "interpreter_args": "-r dotenv/config --max-old-space-size=8000",
+        "cwd": "./",
+        "env-dev": {
+            "NODE_ENV": "development"
+        },
+        "env": {
+            "NODE_ENV": "production"
+        },
+        "env_test": {
+            "NODE_ENV": "test"
+        },
+        "kill_timeout": 10000,
+        "error_file": "./logs/pm2/app-err.log",
+        "out_file": "./logs/pm2/app-out.log",
+        "merge_logs": true,
+        "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS",
+        "min_uptime": "60s",
+        "max_restarts": 30,
+        "autorestart": true,
+        "restart_delay": "60",
+        "wait_ready": true,
+        "watch": true,
+        "ignore_watch": [
+            "node_modules",
+            "logs",
+            "DB",
+            "scripts"
+        ],
+        "watch_options": {
+            "usePolling": true
+        }
+    }
+}

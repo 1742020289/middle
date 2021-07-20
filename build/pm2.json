@@ -1,0 +1,42 @@
+{
+    "apps": {
+        "name": "goodo-intermediate",
+        "script": "./app.js",
+        "interpreter_args": "-r dotenv/config --max-old-space-size=8000",
+        "cwd": "./",
+        "env-dev": {
+            "NODE_ENV": "development"
+        },
+        "env": {
+            "NODE_ENV": "production",
+            "SERVER_HOST": "http://localhost",
+            "SERVER_PORT": 7530,
+            "API_PREFIX": "/api",
+            "API_VERSION": "v1",
+            "BACKEND_BASE_URL": "http://172.16.2.2:9013"
+        },
+        "env_test": {
+            "NODE_ENV": "test"
+        },
+        "kill_timeout": 10000,
+        "error_file": "./logs/pm2/app-err.log",
+        "out_file": "./logs/pm2/app-out.log",
+        "merge_logs": true,
+        "log_date_format": "YYYY-MM-DD HH:mm:ss",
+        "min_uptime": "60s",
+        "max_restarts": 30,
+        "autorestart": true,
+        "restart_delay": "60",
+        "wait_ready": true,
+        "watch": true,
+        "ignore_watch": [
+            "node_modules",
+            "logs",
+            "DB",
+            "scripts"
+        ],
+        "watch_options": {
+            "usePolling": true
+        }
+    }
+}

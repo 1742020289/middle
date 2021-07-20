@@ -1,0 +1,7 @@
+{
+    "SERVER_HOST": "http://localhost",
+    "SERVER_PORT": 7530,
+    "API_PREFIX": "/apim",
+    "API_VERSION": "v2",
+    "BACKEND_BASE_URL": "http://172.16.2.2:9003"
+}

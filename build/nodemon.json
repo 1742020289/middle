@@ -1,0 +1,21 @@
+{
+    "verbose": false,
+    "debug": false,
+    "exec": "node -r tsconfig-paths/register -r dotenv/config",
+    "ignore": [
+        "node_modules",
+        "./test",
+        "fixtures/*",
+        "test/**/*",
+        "docs/*"
+    ],
+    "events": {
+        "restart": ""
+    },
+    "watch": [
+        "./**/*",
+        "./app.js"
+    ],
+    "ext": "js",
+    "inspect": true
+}

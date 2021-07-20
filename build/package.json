@@ -1,0 +1,44 @@
+{
+  "name": "goodo-midtier-v2",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npm i && npm run pm2:kill && npm run pm2:start",
+    "pm2:start": "pm2 start pm2.json",
+    "pm2:test": "npm run pm2:start",
+    "pm2:kill": "pm2 kill",
+    "pm2:stop": "pm2 stop all",
+    "pm2:log": "pm2 logs",
+    "pm2:update": "pm2 update"
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.6.15",
+    "@nestjs/core": "^7.6.15",
+    "@nestjs/platform-express": "^7.6.15",
+    "dotenv": "^10.0.0",
+    "pm2": "^5.1.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^6.6.6"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
